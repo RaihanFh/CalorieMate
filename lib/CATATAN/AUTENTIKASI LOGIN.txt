@@ -1,0 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
+class AuthenticationWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      return UserHomePage();  // Jika sudah login, tampilkan UserHomePage
+    } else {
+      return RegisterPage();  // Jika belum login, tampilkan RegisterPage
+    }
+  }
+}

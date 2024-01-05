@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239408555354",
+    "project_id": "caloriemate-a83c3",
+    "storage_bucket": "caloriemate-a83c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239408555354:android:2fb1aa667453ffc19e7f63",
+        "android_client_info": {
+          "package_name": "com.example.CalorieMate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAktSGV8muTQhXMOBzKjJFOqwuzFrfwSOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
