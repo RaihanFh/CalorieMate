@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 
 class FoodDetailView extends StatefulWidget {
   final int foodQty;
-  final double carb, fat, protein, foodCal;
+  final int carb, fat, protein, foodCal;
   final String namamakanan;
 
   FoodDetailView({
@@ -21,7 +21,7 @@ class FoodDetailView extends StatefulWidget {
 
 class _FoodDetailState extends State<FoodDetailView> {
   late int foodQty;
-  late double carb, fat, protein, foodCal;
+  late int carb, fat, protein, foodCal;
   late String namamakanan;
   bool _isExpanded = false;
 

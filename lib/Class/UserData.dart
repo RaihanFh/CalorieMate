@@ -14,18 +14,39 @@ class UserData {
   final String? gender;
   final BMI_Data? bmi;
   final String? img;
+  late double limitCal;
 
 
   UserData({
-     this.email,
-     this.name,
-     this.gender,
-     this.birthdate,
-     this.height,
-     this.weight,
-     this.bmi,
-     this.img
-  });
+    this.email,
+    this.name,
+    this.gender,
+    this.birthdate,
+    this.height,
+    this.weight,
+    this.bmi,
+    this.img,
+  }) {
+    calculateLimitCal();
+  }
+
+  void calculateLimitCal() {
+    if (gender == "Male") {
+      limitCal = ((66.5 +
+                  (13.75 * weight!) +
+                  (5.003 * height!) -
+                  (6.75 * UserData.calculateAge(birthdate!))) *
+              1.5)
+          .roundToDouble();
+    } else {
+      limitCal = ((655.1 +
+                  (9.563 * weight!) +
+                  (1.850 * height!) -
+                  (4.676 * UserData.calculateAge(birthdate!))) *
+              1.5)
+          .roundToDouble();
+    }
+  }
 
   static int calculateAge(DateTime birthDate) {
     final now = DateTime.now();

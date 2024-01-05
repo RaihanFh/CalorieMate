@@ -8,7 +8,7 @@ class BMIDetailPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0), // Ubah tinggi AppBar di sini
+        preferredSize: Size.fromHeight(70.0), 
         child: AppBar(
           title: Text(
             "BMI Details",

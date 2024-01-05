@@ -374,10 +374,10 @@ class _BodyEditProfileState extends State<BodyEditProfile> {
                                     BMI_Data(userD.height!, userD.weight!,
                                         userD.bmi!.UserTarget),
                                     img!);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Profile changed'),
-                                  ),
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(
+                                      content: Text('Profile changed'),
+                                    ),
                                 );
                               } catch (e) {
                                 // Handle the exception, e.g., show an error message

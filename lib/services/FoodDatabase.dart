@@ -3,7 +3,6 @@ import 'package:CalorieMate/Class/PresetIntake.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:CalorieMate/Class/Consumables.dart';
 import 'package:CalorieMate/Class/DailyIntake.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class FoodDatabase {
   final CollectionReference consumablesCollection = FirebaseFirestore.instance.collection('foodData');
@@ -53,7 +52,7 @@ class FoodDatabase {
       return [];
     }
   }
-
+  
   Future uploadConsumables(String user, String name, int calorie, int fat, int protein, int carb, int weight) async {
     return await consumablesCollection.add({
       'user': user,
@@ -65,6 +64,10 @@ class FoodDatabase {
       'prot': protein,
       'pic' : ''
     });
+  }
+
+  Future<void> deleteConsumables(String id) async {
+    await consumablesCollection.doc(id).delete();
   }
 
   Future uploadIntake(DailyIntake dailyIntake) async {
@@ -79,7 +82,6 @@ class FoodDatabase {
         L.add(c.toMapC());
       }
     }
-    print("Ini CL di upload ${L}");
 
     bool docExists = (await docRef.get()).exists;
     if (docExists) {
@@ -103,19 +105,39 @@ class FoodDatabase {
     try {
       // Mendapatkan data dari Firebase berdasarkan id
       final date = DateTime.now();
-      FoodDatabase fd = FoodDatabase();
       DocumentSnapshot docSnapshot = await intakeCollection.doc("${user}-${date.day}${date.month}${date.year}").get();
-      print("${user}-${date.day}${date.month}${date.year}");
-      print("Ini broww : ${docSnapshot.data()}");
-
-      Map<String, dynamic> data = docSnapshot.data() as Map<String, dynamic>;
-      print("Ini datanya:   ${data['user']}");
+  
       // Memeriksa apakah dokumen ada atau tidak
       if (docSnapshot.exists) {
-        // Map<String, dynamic> data = docSnapshot.data() as Map<String, dynamic>;
-        List<Consumables> intakeList = fd._consumablesDataFromQuerySnapshot(data['Intake_List']);
-        print("Ini intakeList1: ${intakeList[0].name}");
-        
+        Map<String, dynamic> data = docSnapshot.data() as Map<String, dynamic>;
+        List<Consumables> intakeList = [];
+        for(Map<String, dynamic> d in data['Intake_List']){
+          // print("\nid ${d["id"].runtimeType},\nnama ${d["name"].runtimeType},\ncal ${d["calorie"].runtimeType},\nfat ${d["fat"].runtimeType},\nprot ${d["protein"].runtimeType},\ncarb ${d["carb"].runtimeType},\nweight ${d["weight"].runtimeType},\npic ${d["img"].runtimeType}");
+          if (data['user'] == '') {
+            intakeList.add(PresetIntake(
+              d["id"], 
+              d["name"],
+              d["calorie"],
+              d["fat"],
+              d["protein"],
+              d["carb"],
+              d["weight"],
+              d["img"],
+            ));
+          }
+          else{
+              intakeList.add(CustomIntake(
+              d['id'],
+              d['user'],
+              d['name'],
+              d['calorie'],
+              d['fat'],
+              d['protein'],
+              d['carb'],
+              d['weight'],
+            ));
+          }
+        }
         // Mengembalikan objek DailyIntake  
         return DailyIntake(
           data['user'],
@@ -128,7 +150,7 @@ class FoodDatabase {
       }
     } catch (e) {
       // Handle error jika terjadi
-      print("Error getting daily intake by id: $e");
+      print("Error getting daily intake: $e");
       // Mengembalikan null jika terjadi error
       return null;
     }

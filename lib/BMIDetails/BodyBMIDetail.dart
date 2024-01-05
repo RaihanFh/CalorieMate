@@ -140,7 +140,6 @@ class _BodyyState extends State<BodyBMIDetail> {
                   ],
                 ),
               ),
-              //SizedBox(height: 20,),
               // BMI LEVELS
               Container(
                 width: 350,
@@ -420,7 +419,6 @@ class _BodyyState extends State<BodyBMIDetail> {
                   ],
                 ),
               ),
-              //SizedBox(height: 30),
               // IDEAL WEIGHT
               Container(
                 padding: EdgeInsets.all(20.0),
@@ -438,11 +436,6 @@ class _BodyyState extends State<BodyBMIDetail> {
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              // Column(
-              //   children: [
-              //     SliderEditTarget(),
-              //   ],
-              // ),
               Container(
                 padding: EdgeInsets.zero,
                 margin: EdgeInsets.symmetric(horizontal: 25.0),

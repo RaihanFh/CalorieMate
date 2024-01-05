@@ -1,11 +1,11 @@
 import 'package:CalorieMate/Class/PresetIntake.dart';
-import 'package:CalorieMate/LoadingScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:CalorieMate/services/FoodDatabase.dart';
 import 'package:CalorieMate/Class/UserData.dart';
 import 'package:CalorieMate/Class/DailyIntake.dart';
 import 'package:CalorieMate/Class/Consumables.dart';
+import 'package:CalorieMate/HomePage/HomePage.dart';
 
 class FoodDetailAdd extends StatefulWidget {
   final int foodQty, weight;
@@ -58,21 +58,16 @@ class _FoodDetailState extends State<FoodDetailAdd> {
     return FutureBuilder(
       future: foodDatabase.getDailyIntake(user.email!),
       builder: (context, snapshot){
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          // Menampilkan widget loading jika data belum selesai diambil
-          return LoadingScreen();
-        } else if (snapshot.hasError) {
+        if (snapshot.hasError) {
           // Menangani error jika terjadi
           return Text('Error: ${snapshot.error}');
         } else {
           if(snapshot.hasData){
             dI = snapshot.data;
-            print("Ngambil lama");
           }
           else{
             List<Consumables> CL = [];
             dI = DailyIntake(user.email!, CL, DateTime.now());
-            print("Ngambil baru");
           }
           return Padding(
             padding: EdgeInsets.zero,
@@ -104,14 +99,19 @@ class _FoodDetailState extends State<FoodDetailAdd> {
                                 onPressed: () async {
                                   PresetIntake pI = PresetIntake(id, namamakanan, foodCal, fat, protein, carb, weight, img);
                                   dI!.addF(pI);
-                                  print("Ini dI yang di add: ${dI!.CL[0].name}");
                                   try{
                                     await FoodDatabase().uploadIntake(dI!);
-
+                                    Navigator.push(
+                                      context,
+                                      PageRouteBuilder(
+                                        transitionDuration: Duration
+                                            .zero, 
+                                        pageBuilder: (_, __, ___) => HomePage(),
+                                      ), 
+                                    );
                                   } catch (e){
                                     print("Error adding intake: e");
                                   }
-                                  print('add');
                                 },
                               ),
                             ],

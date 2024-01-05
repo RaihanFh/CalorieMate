@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.barulagi.app-mergeDebugResources-25:/values-or/values-or.xml",
+            "outputFile": "com.example.CalorieMate.app-mergeDebugResources-25:/values-or/values-or.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Raihan\\.gradle\\caches\\transforms-3\\3df77d3f0e42ee5d73cdfadb8bcdc01c\\transformed\\browser-1.4.0\\res\\values-or\\values-or.xml",

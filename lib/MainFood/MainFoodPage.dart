@@ -12,9 +12,15 @@ import 'package:CalorieMate/Class/Consumables.dart';
 import 'package:provider/provider.dart';
 import 'package:CalorieMate/Class/UserData.dart';
 
-class MainFoodPage extends StatelessWidget {
+class MainFoodPage extends StatefulWidget {
+  @override
+  State<MainFoodPage> createState() => _MainFoodPageState();
+}
+
+class _MainFoodPageState extends State<MainFoodPage> {
   // Tambahkan controller sebagai variabel instance
   final TextEditingController _searchController = TextEditingController();
+
   final FoodDatabase foodDatabase = FoodDatabase();
 
   @override
@@ -33,36 +39,47 @@ class MainFoodPage extends StatelessWidget {
         } else {
           // Data sudah berhasil diambil, sekarang bisa membangun tampilan
           List<Consumables> dataList = snapshot.data!;
+
           return DefaultTabController(
             initialIndex: 0,
             length: 2,
             child: Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
-                title: TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    hintText: 'Search...',
-                    // Add a clear button to the search bar
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.clear),
-                      color: Color.fromARGB(255, 11, 0, 54),
-                      onPressed: () => _searchController.clear(),
-                    ),
-                    // Add a search icon or button to the search bar
-                    // prefixIcon: IconButton(
-                    //   icon: Icon(Icons.search),
-                    //   color: Color.fromARGB(255, 11, 0, 54),
-                    //   onPressed: () {
-                    //     // Perform the search here
-                    //   },
-                    // ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white), // Set border color here
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white), // Set border color here
-                    ),
+                title: 
+                // TextField(
+                //   controller: _searchController,
+                //   decoration: InputDecoration(
+                //     hintText: 'Search...',
+                //     // Add a clear button to the search bar
+                //     suffixIcon: IconButton(
+                //       icon: Icon(Icons.clear),
+                //       color: Color.fromARGB(255, 11, 0, 54),
+                //       onPressed: () => _searchController.clear(),
+                //     ),
+                //     // Add a search icon or button to the search bar
+                //     // prefixIcon: IconButton(
+                //     //   icon: Icon(Icons.search),
+                //     //   color: Color.fromARGB(255, 11, 0, 54),
+                //     //   onPressed: () {
+                //     //     // Perform the search here
+                //     //   },
+                //     // ),
+                //     enabledBorder: OutlineInputBorder(
+                //       borderSide: BorderSide(color: Colors.white), // Set border color here
+                //     ),
+                //     focusedBorder: OutlineInputBorder(
+                //       borderSide: BorderSide(color: Colors.white), // Set border color here
+                //     ),
+                //   ),
+                // ),
+                Text(
+                  'Consumables',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 11, 0, 54),
+                    fontFamily: "Ken",
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 backgroundColor: Colors.white,
@@ -154,12 +171,14 @@ class MainFoodPage extends StatelessWidget {
                           for (Consumables f in dataList)
                             if (f is CustomIntake && f.user == user.email)
                               FoodCustomDetailAdd(
+                                id: f.id,
                                 foodQty: f.weight!,
                                 carb: f.carb!,
                                 fat: f.fat!,
                                 protein: f.protein!,
                                 foodCal: f.calorie!,
                                 namamakanan: f.name!,
+                                weight: f.weight!,
                               ),
                         ],
                       ),

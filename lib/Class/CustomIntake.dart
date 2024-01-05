@@ -19,6 +19,7 @@ class CustomIntake extends Consumables {
       'protein': protein,
       'carb': carb,
       'weight': weight,
+      'img': '',
     };
   }
 

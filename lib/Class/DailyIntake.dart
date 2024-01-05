@@ -2,7 +2,7 @@ import 'package:CalorieMate/Class/Consumables.dart';
 // import 'package:CalorieMate/Class/UserData.dart';
 
 class DailyIntake {
-  List<Consumables> CL = [];
+  late List<Consumables> CL;
   late DateTime date; // = DateTime.utc(DateTime.now().year, DateTime.now().month, DateTime.now().day);
   int totCal = 0;
   String? user; 
@@ -15,20 +15,20 @@ class DailyIntake {
   }
   
   addF(Consumables c){
-    CL.add(c);
+    this.CL.add(c);
     totCal += c.calorie!;
   }
   
   removeByNameF(String s){
-    CL.removeWhere((Consumables c) => c.name == s);
+    this.CL.removeWhere((Consumables c) => c.name == s);
   }
 
   resetF(){
-    CL.clear();
+    this.CL.clear();
   }
 
   setCal(List<Consumables> CL){
-    for(Consumables c in CL){
+    for(Consumables c in this.CL){
       this.totCal += c.calorie!;
     }
   }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.barulagi.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.CalorieMate.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raihan\\Ngoding\\barulagi\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Raihan\\Ngoding\\CalorieMate\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

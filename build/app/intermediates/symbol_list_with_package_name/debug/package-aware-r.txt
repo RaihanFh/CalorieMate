@@ -1,4 +1,4 @@
-com.example.barulagi
+com.example.CalorieMate
 attr activityAction
 attr activityName
 attr alpha

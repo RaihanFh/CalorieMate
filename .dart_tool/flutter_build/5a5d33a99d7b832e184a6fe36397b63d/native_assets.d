@@ -1,0 +1,1 @@
+ C:\\Users\\Raihan\\Ngoding\\CalorieMate\\.dart_tool\\flutter_build\\5a5d33a99d7b832e184a6fe36397b63d\\native_assets.yaml: 
