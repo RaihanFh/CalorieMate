@@ -55,7 +55,7 @@ class _BodyyState extends State<Bodyy> {
               dailyIntake = DailyIntake(user.email!, CL, DateTime.now());
             }
             cal = dailyIntake!.totCal;
-            calLimit = userD.limitCal!;
+            calLimit = userD.limitCal;
             return Padding(
               padding: EdgeInsets.all(30),
               child: Column(
@@ -268,9 +268,6 @@ class _BodyyState extends State<Bodyy> {
                       namamakanan: c.name!,
                       protein: c.protein!,
                     ),
-                  // FoodDetailView(),
-                  // FoodDetailView(),
-                  // FoodDetailView(),
                 ],
               ),
             );

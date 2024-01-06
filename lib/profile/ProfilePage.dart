@@ -1,8 +1,6 @@
 import 'package:CalorieMate/Login/LoginPage.dart';
 import 'package:CalorieMate/MainFood/MainFoodPage.dart';
 import 'package:CalorieMate/editProfleForm/editProfileFormPage.dart';
-// import 'package:CalorieMate/profile/ChangePW1.dart';
-// import 'package:CalorieMate/profile/ChangePW2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:CalorieMate/HomePage/HomePage.dart';
@@ -18,13 +16,14 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final AuthService _auth = AuthService();
-
+  // Controllers untuk field password
   TextEditingController _oldPasswordController = TextEditingController();
   TextEditingController _newPasswordController = TextEditingController();
   TextEditingController _repeatPasswordController = TextEditingController();
 
   @override
   void dispose() {
+    // Hapus controllers ketika widget tidak digunakan lagi
     _oldPasswordController.dispose();
     _newPasswordController.dispose();
     _repeatPasswordController.dispose();
@@ -35,8 +34,10 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     final user = Provider.of<UserAccount>(context);
     return Scaffold(
+       // Scaffold untuk halaman profil
       backgroundColor: Colors.white,
       appBar: PreferredSize(
+        // AppBar dengan styling khusus
         preferredSize: Size.fromHeight(70.0), // Ubah tinggi AppBar di sini
         child: AppBar(
           title: Text(
@@ -50,6 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
           backgroundColor: Colors.white,
           elevation: 0,
           leading: IconButton(
+            // IconButton untuk kembali
             icon: Icon(Icons.arrow_back, color: Color.fromARGB(255, 11, 0, 54)),
             onPressed: () {
               Navigator.push(
@@ -63,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
           actions: [
-            // Add a PopupMenuButton
+            // PopupMenuButton untuk aksi tambahan seperti edit profil, ubah password, dan logout
             PopupMenuButton<String>(
               icon:
                   Icon(Icons.more_vert, color: Color.fromARGB(255, 11, 0, 54)),

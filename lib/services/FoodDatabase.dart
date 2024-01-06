@@ -112,7 +112,6 @@ class FoodDatabase {
         Map<String, dynamic> data = docSnapshot.data() as Map<String, dynamic>;
         List<Consumables> intakeList = [];
         for(Map<String, dynamic> d in data['Intake_List']){
-          // print("\nid ${d["id"].runtimeType},\nnama ${d["name"].runtimeType},\ncal ${d["calorie"].runtimeType},\nfat ${d["fat"].runtimeType},\nprot ${d["protein"].runtimeType},\ncarb ${d["carb"].runtimeType},\nweight ${d["weight"].runtimeType},\npic ${d["img"].runtimeType}");
           if (data['user'] == '') {
             intakeList.add(PresetIntake(
               d["id"], 

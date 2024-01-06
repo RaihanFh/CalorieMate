@@ -3,9 +3,9 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/_fe_analyzer_shared-61.0.0",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/_fe_analyzer_shared-64.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     },
     {
       "name": "_flutterfire_internals",
@@ -15,9 +15,9 @@
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/analyzer-5.13.0",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/analyzer-6.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "args",
@@ -51,19 +51,19 @@
     },
     {
       "name": "cloud_firestore",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore-4.13.6",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore-4.14.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "cloud_firestore_platform_interface",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_platform_interface-6.0.10",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_platform_interface-6.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "cloud_firestore_web",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_web-3.8.10",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cloud_firestore_web-3.9.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -81,15 +81,15 @@
     },
     {
       "name": "coverage",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/coverage-1.6.4",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/coverage-1.7.2",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "cross_file",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cross_file-0.3.3+7",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/cross_file-0.3.3+8",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "crypto",
@@ -141,7 +141,7 @@
     },
     {
       "name": "firebase_auth",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth-4.15.3",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth-4.16.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -153,7 +153,7 @@
     },
     {
       "name": "firebase_auth_web",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_web-5.8.12",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_auth_web-5.8.13",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -177,7 +177,7 @@
     },
     {
       "name": "firebase_storage",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_storage-11.5.6",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_storage-11.6.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -243,9 +243,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.0",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "http_multi_server",
@@ -261,21 +261,21 @@
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.0.5",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker-1.0.6",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.9+1",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_android-0.8.9+2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "image_picker_for_web",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.0.1",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_for_web-3.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "image_picker_ios",
@@ -297,9 +297,9 @@
     },
     {
       "name": "image_picker_platform_interface",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_platform_interface-2.9.1",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_platform_interface-2.9.2",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "image_picker_windows",
@@ -387,7 +387,7 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.7",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -525,9 +525,9 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-11.10.0",
+      "rootUri": "file:///C:/Users/Raihan/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-13.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.0"
     },
     {
       "name": "watcher",
@@ -566,7 +566,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-01-05T04:26:48.903702Z",
+  "generated": "2024-01-06T05:43:07.942248Z",
   "generator": "pub",
   "generatorVersion": "3.2.0"
 }

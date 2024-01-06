@@ -4,7 +4,7 @@
             "outputFile": "com.example.CalorieMate.app-mergeDebugResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raihan\\Ngoding\\CalorieMate\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "D:\\Documents\\Semester 5\\RPL\\CalorieMate\\CalorieMate\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

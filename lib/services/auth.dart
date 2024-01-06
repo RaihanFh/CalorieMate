@@ -24,7 +24,6 @@ class AuthService {
       return _userFromFirebaseUser(credential.user);
     } catch (e) {
       print("Error during signUp: ${e.toString()}");
-      //return null;
     }
   }
 
@@ -35,7 +34,6 @@ class AuthService {
       return _userFromFirebaseUser(credential.user);
     } catch (e) {
       print("Error during signIn: ${e.toString()}");
-      //return null;
     }
   }
 

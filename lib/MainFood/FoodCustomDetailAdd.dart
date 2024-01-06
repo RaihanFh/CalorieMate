@@ -72,7 +72,7 @@ class _FoodDetailState extends State<FoodCustomDetailAdd> {
               items: [
                 PopupMenuItem(
                   child: ListTile(
-                    visualDensity: VisualDensity(vertical: 3), //INI RAI SETTING UKURANNYA
+                    visualDensity: VisualDensity(vertical: -4), //INI RAI SETTING UKURANNYA
                     title: Text('Remove'),
                     onTap: () {
                       showDialog(

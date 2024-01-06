@@ -2,25 +2,11 @@ import 'package:CalorieMate/Class/Consumables.dart';
 import 'package:CalorieMate/Class/DailyIntake.dart';
 import 'package:CalorieMate/Class/PresetIntake.dart';
 import 'package:CalorieMate/Class/UserData.dart';
-import 'package:CalorieMate/FoodDetail/FoodDetailPage.dart';
 import 'package:CalorieMate/HomePage/HomePage.dart';
 import 'package:CalorieMate/LoadingScreen.dart';
 import 'package:CalorieMate/services/FoodDatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-/*
-pemanggilan 
-EachPic(
-  imagePath: 'assets/img/Pizza.jpg',
-  foodName: 'Nama Makanan',
-  foodQty: '10',
-  carb: '20',
-  fat: '15',
-  protein: '30',
-  calorie: '250',
-)
-*/
 
 class EachPic extends StatelessWidget{
   final String imagePath, id;
@@ -70,13 +56,6 @@ class EachPic extends StatelessWidget{
         }
         return GestureDetector(
           onTap: () {
-            // Navigator.push(
-            //   context,
-            //   PageRouteBuilder(
-            //     transitionDuration: Duration.zero, // Mengatur durasi transisi menjadi nol
-            //     pageBuilder: (_, __, ___) => FoodDetailPage(),
-            //   ),
-            // );
             showDialog(
               context: context,
               builder: (BuildContext context) => AlertDialog(

@@ -3,6 +3,7 @@ import 'package:CalorieMate/Class/UserData.dart';
 import 'package:provider/provider.dart';
 import 'package:CalorieMate/Class/BMI_Data.dart';
 import 'package:CalorieMate/services/Database.dart';
+import 'package:CalorieMate/LoadingScreen.dart';
 
 class Bodyy extends StatefulWidget {
   @override
@@ -12,12 +13,23 @@ class Bodyy extends StatefulWidget {
 class _BodyyState extends State<Bodyy> {
   @override
   Widget build(BuildContext context) {
+    // Mendapatkan informasi user dari Provider
     final user = Provider.of<UserAccount>(context);
 
     return StreamBuilder<UserData>(
+      // Mengambil data user dari Firebase menggunakan stream
         stream: DatabaseService(email: user.email).uData,
         builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+             // Jika data masih diambil, tampilkan loading screen
+            return LoadingScreen();
+          }
+          if (snapshot.hasError) {
+            // Handle errors here
+            return Text('Error: ${snapshot.error}');
+          }
           UserData userD = snapshot.data!;
+           // Tampilan utama halaman
           return Padding(
             padding: EdgeInsets.only(left: 30, right: 30, top: 20, bottom: 20),
             child: Column(
@@ -25,6 +37,7 @@ class _BodyyState extends State<Bodyy> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Menampilkan avatar user dengan foto dari internet
                     CircleAvatar(
                       backgroundColor: Color.fromARGB(255, 11, 0, 54),
                       radius: 55,
@@ -35,6 +48,7 @@ class _BodyyState extends State<Bodyy> {
                       ),
                     ),
                     SizedBox(height: 15),
+                    // Menampilkan nama user
                     Text(
                       "${userD.name}",
                       style: TextStyle(
@@ -71,6 +85,7 @@ class _BodyyState extends State<Bodyy> {
                           ),
                         ),
                         SizedBox(height: 20),
+                        // Menampilkan informasi user seperti email, gender, dan age
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -154,6 +169,7 @@ class _BodyyState extends State<Bodyy> {
                           ),
                         ),
                         SizedBox(height: 20),
+                        // Menampilkan informasi BMI seperti current weight, height, result, dan weight status
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

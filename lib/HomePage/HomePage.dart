@@ -20,7 +20,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double heightInMeter = currHeight / 100.0?
     double width = MediaQuery.of(context).size.width;
     final user = Provider.of<UserAccount>(context);
     return StreamBuilder<UserData>(

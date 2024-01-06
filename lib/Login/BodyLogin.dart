@@ -1,23 +1,26 @@
 import 'package:CalorieMate/HomePage/HomePage.dart';
-// import 'package:CalorieMate/Login/forgotPasswordInsertUsername.dart';
 import 'package:flutter/material.dart';
 import 'package:CalorieMate/services/auth.dart';
 import 'package:CalorieMate/Class/UserData.dart';
 
+// Mendefinisikan class BodyLogin yang merupakan StatefulWidget
 class BodyLogin extends StatefulWidget {
   @override
+  // Override method createState untuk membuat state dari BodyLogin
   State<BodyLogin> createState() => _BodyLoginState();
 }
 
+// Private class _BodyLoginState yang merupakan state dari BodyLogin
 class _BodyLoginState extends State<BodyLogin> {
 
-  final AuthService _auth = AuthService();
+  final AuthService _auth = AuthService(); // Instance dari AuthService untuk otentikasi
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _emailController = TextEditingController(); // Kontroller untuk field email
+  TextEditingController _passwordController = TextEditingController(); // Kontroller untuk field password
 
   @override
     void dispose() {
+      // Memusnahkan kontroler saat tidak dibutuhkan untuk mencegah kebocoran memori
       _emailController.dispose();
       _passwordController.dispose();
       super.dispose();
@@ -25,19 +28,22 @@ class _BodyLoginState extends State<BodyLogin> {
 
   @override
   Widget build(BuildContext context) {
+    // Membuat tata letak untuk halaman login
     return Padding(
       padding: EdgeInsets.all(30),
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             SizedBox(height: 40,),
+            // Kontainer untuk email dan password
             Container(
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: <Widget>[
+                  // Label untuk kolom email
                   Padding(
-                    padding: EdgeInsets.only(left: 10), // Atur jarak kiri sebesar 8, sesuaikan sesuai kebutuhan
+                    padding: EdgeInsets.only(left: 10),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: Text(
@@ -51,6 +57,7 @@ class _BodyLoginState extends State<BodyLogin> {
                     ),
                   ),
                   SizedBox(height: 15,),
+                  // Input field untuk email
                   Container(
                     padding: EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
@@ -66,8 +73,9 @@ class _BodyLoginState extends State<BodyLogin> {
                     ),
                   ),
                   SizedBox(height: 30,),
+                  // Label untuk kolom password
                   Padding(
-                    padding: EdgeInsets.only(left:10), // Atur jarak kiri sebesar 8, sesuaikan sesuai kebutuhan
+                    padding: EdgeInsets.only(left:10),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: Text(
@@ -81,6 +89,7 @@ class _BodyLoginState extends State<BodyLogin> {
                     ),
                   ),
                   SizedBox(height: 15,),
+                  // Input field untuk password
                   Container(
                     padding: EdgeInsets.only(left: 10, right: 10),
                     decoration: BoxDecoration(
@@ -100,6 +109,7 @@ class _BodyLoginState extends State<BodyLogin> {
               )
             ),
             SizedBox(height: 50,),
+            // Tombol untuk login
             Container(
               height: 50,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -107,6 +117,7 @@ class _BodyLoginState extends State<BodyLogin> {
                 child: TextButton(
                   onPressed: () {
                     setState(() {
+                      // Memeriksa apakah field email dan password kosong sebelum login
                       if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -114,7 +125,7 @@ class _BodyLoginState extends State<BodyLogin> {
                           ),
                         );
                       } else {
-                        _signIn();
+                        _signIn(); // Memanggil fungsi sign-in jika email dan password terisi
                       }
                     });
                   },
@@ -142,32 +153,21 @@ class _BodyLoginState extends State<BodyLogin> {
               ),
             ),
             SizedBox(height: 15,),
-            // GestureDetector(
-            //   onTap: () {
-            //     ShowDataAlert.show(context);
-            //   },
-            //   child: Text(
-            //     "Forgot Password?",
-            //     style: TextStyle(
-            //       color: Colors.grey,
-            //       fontFamily: "Ken",
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
     );
   }
-
+// Metode untuk menangani proses sign-in
   void _signIn() async {
     String email = _emailController.text;
     String password = _passwordController.text;
-
+// Mencoba untuk sign-in dengan email dan password yang diberikan
     UserAccount? user = await _auth.signInWithEmailAndPassword(email, password);
     print(user);
     if (user != null){
       print("User logged successfully");
+       // Navigasi ke HomePage ketika login berhasil
       Navigator.push(
         context,
         PageRouteBuilder(
@@ -178,6 +178,7 @@ class _BodyLoginState extends State<BodyLogin> {
     }
     else{
       print("The the email or password is incorrect.");
+       // Menampilkan pesan kesalahan jika login gagal
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('The the email or password is incorrect.'),
@@ -186,3 +187,4 @@ class _BodyLoginState extends State<BodyLogin> {
     }
   }
 }
+

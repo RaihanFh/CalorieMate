@@ -231,26 +231,6 @@ class _FoodDetailState extends State<FoodDetailAdd> {
                                   ],
                                 ),
                                 SizedBox(height: 15,),
-                                // Row(
-                                //   mainAxisAlignment: MainAxisAlignment.start,
-                                //   children: [
-                                //     TextButton(
-                                //       onPressed: () {
-                                //         Navigator.push(
-                                //           context,
-                                //           MaterialPageRoute(builder: (context) => FoodDetailPage()),
-                                //         );
-                                //       },
-                                //       child: Text(
-                                //         'Ingredients',
-                                //         style: TextStyle(
-                                //           color: Color.fromARGB(255, 11, 0, 54),
-                                //           fontWeight: FontWeight.normal,
-                                //         ),
-                                //       ),
-                                //     ),
-                                //   ],
-                                // ),
                               ],
                             ),
                           ],

@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 import 'package:CalorieMate/Class/BMI_Data.dart';
 import 'dart:io';
 import 'package:CalorieMate/services/varGlobal.dart';
+import 'package:CalorieMate/LoadingScreen.dart';
 
 class BodyEditProfile extends StatefulWidget {
   @override
@@ -63,8 +64,6 @@ class _BodyEditProfileState extends State<BodyEditProfile> {
     }
   }
 
-  // String? img;
-  // late File? _image = null;
   final picker = ImagePicker();
 
   Future<void> _getImageFromGallery() async {
@@ -164,6 +163,14 @@ class _BodyEditProfileState extends State<BodyEditProfile> {
     return StreamBuilder<UserData>(
         stream: DatabaseService(email: user.email).uData,
         builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // Return a loading widget if data is still being fetched
+            return LoadingScreen();
+          }
+          if (snapshot.hasError) {
+            // Handle errors here
+            return Text('Error: ${snapshot.error}');
+          }
           UserData userD = snapshot.data!;
           return Padding(
             padding: EdgeInsets.all(30),

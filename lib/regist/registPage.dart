@@ -20,27 +20,6 @@ class registPage extends StatelessWidget {
         elevation: 0,
         leadingWidth: 10,
       ),
-      // appBar: PreferredSize(
-      //   preferredSize: Size.fromHeight(70.0), // Ubah tinggi AppBar di sini
-      //   child: AppBar(
-      //     title: Text(
-      //       "Registration",
-      //       style: TextStyle(
-      //           color: Color.fromARGB(255, 11, 0, 54),
-      //           fontFamily: "Ken",
-      //           fontSize: 25,
-      //           fontWeight: FontWeight.bold),
-      //     ),
-      //     backgroundColor: Colors.white,
-      //     elevation: 0,
-      //     leading: IconButton(
-      //       icon: Icon(Icons.arrow_back, color: Color.fromARGB(255, 11, 0, 54)),
-      //       onPressed: () {
-      //         Navigator.pop(context);
-      //       },
-      //     ),
-      //   ),
-      // ),
       body: Container(
         width: double.infinity,
         child: Column(

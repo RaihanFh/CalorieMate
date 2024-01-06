@@ -217,40 +217,7 @@ class _bodyCustFoodState extends State<bodyCustFood> {
                           border: InputBorder.none),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  // Padding(
-                  //   padding: EdgeInsets.only(left: 10),
-                  //   child: Align(
-                  //     alignment: Alignment.topLeft,
-                  //     child: Text(
-                  //       'Ingredients (Optional)',
-                  //       style: TextStyle(
-                  //         color: Color.fromARGB(255, 11, 0, 54),
-                  //         fontSize: 15,
-                  //         fontFamily: "Ken",
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-                  // SizedBox(height: 15,),
-                  // Container(
-                  //   padding: EdgeInsets.only(left: 10, right: 10),
-                  //   decoration: BoxDecoration(
-                  //     border: Border.all(color: Color.fromARGB(255, 11, 0, 54)),
-                  //     borderRadius: BorderRadius.circular(30.0)
-                  //   ),
-                  //   child: TextField(
-                  //     minLines: 5,
-                  //     maxLines: 15,
-                  //     keyboardType: TextInputType.multiline,
-                  //     controller: _fIngredientController,
-                  //     decoration: InputDecoration(
-                  //       hintStyle: TextStyle(color: Color.fromARGB(255, 11, 0, 54)),
-                  //       border: InputBorder.none,
-                  //     ),
-                  //   ),
-                  // ),
-                  SizedBox(height: 20,)
+                  SizedBox(height: 30,),
                 ],
               ),
             ),

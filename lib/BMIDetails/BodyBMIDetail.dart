@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:CalorieMate/Class/UserData.dart';
 import 'package:CalorieMate/services/Database.dart';
 import 'package:CalorieMate/Class/BMI_Data.dart';
+import 'package:CalorieMate/LoadingScreen.dart';
 import 'package:CalorieMate/services/varGlobal.dart' as global;
 
 class BodyBMIDetail extends StatefulWidget {
@@ -44,6 +45,14 @@ class _BodyyState extends State<BodyBMIDetail> {
     return StreamBuilder<UserData>(
       stream: DatabaseService(email: user.email).uData,
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Return a loading widget if data is still being fetched
+          return LoadingScreen();
+        }
+        if (snapshot.hasError) {
+          // Handle errors here
+          return Text('Error: ${snapshot.error}');
+        }
         userD = snapshot.data!;
         Batas = userD.bmi!.HealthyWeight[1];
         Bbawah = userD.bmi!.HealthyWeight[0];
@@ -523,8 +532,7 @@ class _BodyyState extends State<BodyBMIDetail> {
                                   // Handle the exception, e.g., show an error message
                                   print("Error updating user data: $e");
                                 }
-                                if (!global.globalIsLogin) {
-                                  Navigator.push(
+                                Navigator.push(
                                     context,
                                     PageRouteBuilder(
                                       transitionDuration: Duration
@@ -532,6 +540,8 @@ class _BodyyState extends State<BodyBMIDetail> {
                                       pageBuilder: (_, __, ___) => HomePage(),
                                     ), // Navigasi ke halaman kedua
                                   );
+                                if (!global.globalIsLogin) {
+                                  
                                   global.globalIsLogin = true;
                                 }
                               },

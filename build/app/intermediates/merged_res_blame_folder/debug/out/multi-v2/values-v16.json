@@ -4,7 +4,7 @@
             "outputFile": "com.example.CalorieMate.app-mergeDebugResources-25:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raihan\\.gradle\\caches\\transforms-3\\17c44a9ee9728471e88635da67cac57c\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\17c44a9ee9728471e88635da67cac57c\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
